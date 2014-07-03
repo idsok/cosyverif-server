@@ -1,0 +1,26 @@
+#entete {
+	width: 960px;
+	height: 100px;
+	background-color:#FF9900;
+	margin: auto;
+}
+
+#logo {
+	margin-left: 5px;
+	margin-top: 5px;
+	border-radius:0 0 90px 0;
+	border:5px solid #9966FF;
+	width: 155px;
+	height: 80px;
+}
+
+#logo div {
+	margin-left: 5px;
+	margin-top: 5px;
+	border-radius:0 0 90px 0;
+	width: 140px;
+	height: 70px;
+	background-color:#FF3366;
+	background-image: url(../logos/logo.jpg);
+	background-position:right top;
+}
