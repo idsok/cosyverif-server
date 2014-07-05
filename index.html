@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="website/css/index.css" media="all"/>
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script type="text/javascript">
+			rootURL = "http://localhost:8080/server.php";
+			username = "";
+			password = "";
+			function chargerPage(page)
+			{
+				$('#contenu').load("website/html/" + page + ".html");
+			}
+			function chargerMenu(page)
+			{
+				$('#menuGauche').load("website/html/" + page + ".html");
+			}
+			function connexion()
+			{
+				if ($("#connexion").text() == "Log in")
+				{
+					chargerPage("authenticate");
+				}
+				else
+				{
+					username = "";
+					password = "";
+					chargerMenu("menu_left_default");
+					chargerPage("home_default");
+					$("#connexion").text("Log in");
+					jQuery.ajax({
+	  				type: 'GET', // Le type de ma requete
+	  				url: rootURL + '/', 
+				  	dataType: 'text/html',
+					  success: function(data, textStatus, jqXHR) 
+						  {
+						    $(document).html(data);
+						  },
+					  error: function(jqXHR, textStatus, errorThrown) 
+						  {
+						    // Une erreur s'est produite lors de la requete
+						    $(document).html("erreur");
+						    
+						  }
+					});
+				  
+				}
+			}
+		</script>
+		<title>Accueil</title>
+	</head>
+	<body>
+
+		<!-- entete -->
+		<div id="entete">
+			<div id="logo"><div></div></div>
+		</div>
+
+		<!-- menu haut -->
+		<div id="menuHaut">
+		</div>
+
+		<!-- Corps -->
+		<div id="corps">
+			<!-- menu gauche -->
+		 	<div id="menuGauche">
+
+		 	</div>
+
+			<!-- contenu -->
+		  <div id="contenu">
+				
+			</div>
+		</div>
+		<!-- Bas de page -->
+		<div id="footer">
+		 Pied de Page j'espère être érpert
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function()
+			{
+				$('#menuHaut').load("website/html/menu_top.html");
+				chargerMenu("menu_left_default");
+				chargerPage("home_default");
+			});
+		</script>
+	</body>
+</html>
