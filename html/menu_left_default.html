@@ -1,6 +1,6 @@
 <script type='text/javascript'>
 $( document ).ready(function() {
-   $('#cssmenu li.has-sub>a').on('click', function(){
+   $('#menu_left_default #cssmenu li.has-sub>a').on('click', function(){
          $(this).removeAttr('href');
          var element = $(this).parent('li');
          if (element.hasClass('open')) {
@@ -21,32 +21,32 @@ $( document ).ready(function() {
 </script>
 <style type="text/css">
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300);
-#cssmenu {
+#menu_left_default #cssmenu {
   position: relative;
   margin: 0;
   font-family: 'Roboto Condensed';
   line-height: 1;
   width: 215px;
 }
-.align-right {
+#menu_left_default .align-right {
   float: right;
 }
-#cssmenu ul {
+#menu_left_default #cssmenu ul {
   margin: 0;
   padding: 0;
   list-style: none;
   display: block;
 }
-#cssmenu ul li {
+#menu_left_default #cssmenu ul li {
   position: relative;
   margin: 0;
   padding: 0;
 }
-#cssmenu ul li a {
+#menu_left_default #cssmenu ul li a {
   text-decoration: none;
   cursor: pointer;
 }
-#cssmenu > ul > li > a {
+#menu_left_default #cssmenu > ul > li > a {
   color: #dddddd;
   text-transform: uppercase;
   display: block;
@@ -66,22 +66,22 @@ $( document ).ready(function() {
   transition: all 0.25s ease-in;
   position: relative;
 }
-#cssmenu > ul > li:first-child > a {
+#menu_left_default #cssmenu > ul > li:first-child > a {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
-#cssmenu > ul > li:last-child > a {
+#menu_left_default #cssmenu > ul > li:last-child > a {
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   border-bottom: 1px solid #000000;
 }
-#cssmenu > ul > li:hover > a,
-#cssmenu > ul > li.open > a,
-#cssmenu > ul > li.active > a {
+#menu_left_default #cssmenu > ul > li:hover > a,
+#menu_left_default #cssmenu > ul > li.open > a,
+#menu_left_default #cssmenu > ul > li.active > a {
   background: #151515;
   color: #ffffff;
 }
-#cssmenu ul > li.has-sub > a::after {
+#menu_left_default #cssmenu ul > li.has-sub > a::after {
   content: '';
   position: absolute;
   display: block;
@@ -102,7 +102,7 @@ $( document ).ready(function() {
   -o-transition: all .2s ease;
   transition: all .2s ease;
 }
-#cssmenu ul > li.has-sub > a::before {
+#menu_left_default #cssmenu ul > li.has-sub > a::before {
   content: '';
   position: absolute;
   display: block;
@@ -123,7 +123,7 @@ $( document ).ready(function() {
   -o-transition: all .2s ease;
   transition: all .2s ease;
 }
-#cssmenu ul > li.has-sub::after {
+#menu_left_default #cssmenu ul > li.has-sub::after {
   content: '';
   display: block;
   position: absolute;
@@ -136,27 +136,27 @@ $( document ).ready(function() {
   top: 24.5px;
   pointer-events: none;
 }
-#cssmenu ul > li:hover::after,
-#cssmenu ul > li.active::after,
-#cssmenu ul > li.open::after {
+#menu_left_default #cssmenu ul > li:hover::after,
+#menu_left_default #cssmenu ul > li.active::after,
+#menu_left_default #cssmenu ul > li.open::after {
   border-top-color: #ffffff;
 }
-#cssmenu ul > li.has-sub.open > a::after {
+#menu_left_default #cssmenu ul > li.has-sub.open > a::after {
   opacity: 1;
   bottom: -13px;
 }
-#cssmenu ul > li.has-sub.open > a::before {
+#menu_left_default #cssmenu ul > li.has-sub.open > a::before {
   opacity: 1;
   bottom: -12px;
 }
-#cssmenu ul ul {
+#menu_left_default #cssmenu ul ul {
   display: none;
 }
-#cssmenu ul ul li {
+#menu_left_default #cssmenu ul ul li {
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
 }
-#cssmenu ul ul li a {
+#menu_left_default #cssmenu ul ul li a {
   background: #f1f1f1;
   display: block;
   position: relative;
@@ -171,70 +171,62 @@ $( document ).ready(function() {
   -o-transition: all 0.25s ease-in;
   transition: all 0.25s ease-in;
 }
-#cssmenu ul ul li:first-child > a {
+#menu_left_default #cssmenu ul ul li:first-child > a {
   padding-top: 18px;
 }
-#cssmenu ul ul ul li {
+#menu_left_default #cssmenu ul ul ul li {
   border: 0;
 }
-#cssmenu ul ul li:hover > a,
-#cssmenu ul ul li.open > a,
-#cssmenu ul ul li.active > a {
+#menu_left_default #cssmenu ul ul li:hover > a,
+#menu_left_default #cssmenu ul ul li.open > a,
+#menu_left_default #cssmenu ul ul li.active > a {
   background: #e4e4e4;
   color: #666666;
 }
-#cssmenu ul ul > li.has-sub > a::after {
+#menu_left_default #cssmenu ul ul > li.has-sub > a::after {
   border-top: 13px solid #dddddd;
 }
-#cssmenu ul ul > li.has-sub > a::before {
+#menu_left_default #cssmenu ul ul > li.has-sub > a::before {
   border-top: 13px solid #e4e4e4;
 }
-#cssmenu ul ul ul li a {
+#menu_left_default #cssmenu ul ul ul li a {
   padding-left: 30px;
 }
-#cssmenu ul ul > li.has-sub::after {
+#menu_left_default #cssmenu ul ul > li.has-sub::after {
   top: 18.5px;
   border-width: 6px;
   border-top-color: #777777;
 }
-#cssmenu ul ul > li:hover::after,
-#cssmenu ul ul > li.active::after,
-#cssmenu ul ul > li.open::after {
+#menu_left_default #cssmenu ul ul > li:hover::after,
+#menu_left_default #cssmenu ul ul > li.active::after,
+#menu_left_default #cssmenu ul ul > li.open::after {
   border-top-color: #666666;
 }
 </style>
+<div id="menu_left_default">
 <div id='cssmenu'>
+<input type="search" id="search" results="5" placeholder="Search..." name="s" style="-webkit-appearance: textfield;-webkit-box-sizing: content-box; width:207px; height:25px;font-size:14px;">
 <ul>
-   <li class='active'><a href='index.html'><span>Home</span></a></li>
-   <li class='has-sub'><a href='#'><span>User resources</span></a>
-      <ul>
-         <li class='has-sub'><a href='#'><span>Formalisms</span></a>
-            <ul>
-               <li><a href='#'><span>Sub Item</span></a></li>
-               <li class='last'><a href='#'><span>Sub Item</span></a></li>
-            </ul>
-         </li>
-         <li class='has-sub'><a href='#'><span>Models</span></a>
-            <ul>
-               <li><a href='#'><span>Sub Item</span></a></li>
-               <li class='last'><a href='#'><span>Sub Item</span></a></li>
-            </ul>
-         </li>
-         <li><a href='#'><span>Converters</span></a></li>
-         <li><a href='#'><span>Scenarios</span></a></li>
-         <li><a href='#'><span>Services</span></a></li>
-         <li class='last'><a href='#'><span>Executions</span></a></li>
-      </ul>
-   </li>
-   <li class='has-sub last'><a href='#'><span>Project resources</span></a>
-      <ul>
-         <li><a href='#'><span>Formalisms</span></a></li>
-         <li><a href='#'><span>Models</span></a></li>
-         <li><a href='#'><span>Converters</span></a></li>
-         <li><a href='#'><span>Scenarios</span></a></li>
-         <li><a href='#'><span>Services</span></a></li>
-         <li class='last'><a href='#'><span>Executions</span></a></li>
-      </ul>
-   </li>
+<li class='has-sub'><a href='#'><span>Formalisms</span></a>
+  <ul>
+    <li><a href='#'><span>Sub Item</span></a></li>
+    <li class='last'><a href='#'><span>Sub Item</span></a></li>
+  </ul>
+</li>
+<li class='has-sub'><a href='#'><span>Models</span></a>
+  <ul>
+    <li><a href='#'><span>Sub Item</span></a></li>
+    <li class='last'><a href='#'><span>Sub Item</span></a></li>
+  </ul>
+</li>
+<li><a href='#'><span>Services</span></a></li>
+<li class='last'><a href='#'><span>Executions</span></a></li>
 </ul>
+<select name="nom" size="1" style="width:215px;height:25px;font-size:14px;">
+  <option>Username</option>
+  <option>Project1</option>
+  <option>Project2</option>
+  <option>Project3</option>
+</select>
+</div>
 </div>

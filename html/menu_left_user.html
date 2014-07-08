@@ -1,52 +1,31 @@
-<script type='text/javascript'>
-$( document ).ready(function() {
-   $('#cssmenu li.has-sub>a').on('click', function(){
-         $(this).removeAttr('href');
-         var element = $(this).parent('li');
-         if (element.hasClass('open')) {
-            element.removeClass('open');
-            element.find('li').removeClass('open');
-            element.find('ul').slideUp();
-         }
-         else {
-            element.addClass('open');
-            element.children('ul').slideDown();
-            element.siblings('li').children('ul').slideUp();
-            element.siblings('li').removeClass('open');
-            element.siblings('li').find('li').removeClass('open');
-            element.sibl5ngs('li').find('ul').slideUp();
-         }
-   });
-});
-</script>
 <style type="text/css">
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300);
-#cssmenu {
+#menu_left_user #cssmenu {
   position: relative;
   margin: 0;
   font-family: 'Roboto Condensed';
   line-height: 1;
   width: 215px;
 }
-.align-right {
+#menu_left_user .align-right {
   float: right;
 }
-#cssmenu ul {
+#menu_left_user #cssmenu ul {
   margin: 0;
   padding: 0;
   list-style: none;
   display: block;
 }
-#cssmenu ul li {
+#menu_left_user #cssmenu ul li {
   position: relative;
   margin: 0;
   padding: 0;
 }
-#cssmenu ul li a {
+#menu_left_user #cssmenu ul li a {
   text-decoration: none;
   cursor: pointer;
 }
-#cssmenu > ul > li > a {
+#menu_left_user #cssmenu > ul > li > a {
   color: #dddddd;
   text-transform: uppercase;
   display: block;
@@ -66,22 +45,22 @@ $( document ).ready(function() {
   transition: all 0.25s ease-in;
   position: relative;
 }
-#cssmenu > ul > li:first-child > a {
+#menu_left_user #cssmenu > ul > li:first-child > a {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
-#cssmenu > ul > li:last-child > a {
+#menu_left_user #cssmenu > ul > li:last-child > a {
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   border-bottom: 1px solid #000000;
 }
-#cssmenu > ul > li:hover > a,
-#cssmenu > ul > li.open > a,
-#cssmenu > ul > li.active > a {
+#menu_left_user #cssmenu > ul > li:hover > a,
+#menu_left_user #cssmenu > ul > li.open > a,
+#menu_left_user #cssmenu > ul > li.active > a {
   background: #151515;
   color: #ffffff;
 }
-#cssmenu ul > li.has-sub > a::after {
+#menu_left_user #cssmenu ul > li.has-sub > a::after {
   content: '';
   position: absolute;
   display: block;
@@ -102,7 +81,7 @@ $( document ).ready(function() {
   -o-transition: all .2s ease;
   transition: all .2s ease;
 }
-#cssmenu ul > li.has-sub > a::before {
+#menu_left_user #cssmenu ul > li.has-sub > a::before {
   content: '';
   position: absolute;
   display: block;
@@ -123,7 +102,7 @@ $( document ).ready(function() {
   -o-transition: all .2s ease;
   transition: all .2s ease;
 }
-#cssmenu ul > li.has-sub::after {
+#menu_left_user #cssmenu ul > li.has-sub::after {
   content: '';
   display: block;
   position: absolute;
@@ -136,27 +115,27 @@ $( document ).ready(function() {
   top: 24.5px;
   pointer-events: none;
 }
-#cssmenu ul > li:hover::after,
-#cssmenu ul > li.active::after,
-#cssmenu ul > li.open::after {
+#menu_left_user #cssmenu ul > li:hover::after,
+#menu_left_user #cssmenu ul > li.active::after,
+#menu_left_user #cssmenu ul > li.open::after {
   border-top-color: #ffffff;
 }
-#cssmenu ul > li.has-sub.open > a::after {
+#menu_left_user #cssmenu ul > li.has-sub.open > a::after {
   opacity: 1;
   bottom: -13px;
 }
-#cssmenu ul > li.has-sub.open > a::before {
+#menu_left_user #cssmenu ul > li.has-sub.open > a::before {
   opacity: 1;
   bottom: -12px;
 }
-#cssmenu ul ul {
+#menu_left_user #cssmenu ul ul {
   display: none;
 }
-#cssmenu ul ul li {
+#menu_left_user #cssmenu ul ul li {
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
 }
-#cssmenu ul ul li a {
+#menu_left_user #cssmenu ul ul li a {
   background: #f1f1f1;
   display: block;
   position: relative;
@@ -171,101 +150,163 @@ $( document ).ready(function() {
   -o-transition: all 0.25s ease-in;
   transition: all 0.25s ease-in;
 }
-#cssmenu ul ul li:first-child > a {
+#menu_left_user #cssmenu ul ul li:first-child > a {
   padding-top: 18px;
 }
-#cssmenu ul ul ul li {
+#menu_left_user #cssmenu ul ul ul li {
   border: 0;
 }
-#cssmenu ul ul li:hover > a,
-#cssmenu ul ul li.open > a,
-#cssmenu ul ul li.active > a {
+#menu_left_user #cssmenu ul ul li:hover > a,
+#menu_left_user #cssmenu ul ul li.open > a,
+#menu_left_user #cssmenu ul ul li.active > a {
   background: #e4e4e4;
   color: #666666;
 }
-#cssmenu ul ul > li.has-sub > a::after {
+#menu_left_user #cssmenu ul ul > li.has-sub > a::after {
   border-top: 13px solid #dddddd;
 }
-#cssmenu ul ul > li.has-sub > a::before {
+#menu_left_user #cssmenu ul ul > li.has-sub > a::before {
   border-top: 13px solid #e4e4e4;
 }
-#cssmenu ul ul ul li a {
+#menu_left_user #cssmenu ul ul ul li a {
   padding-left: 30px;
 }
-#cssmenu ul ul > li.has-sub::after {
+#menu_left_user #cssmenu ul ul > li.has-sub::after {
   top: 18.5px;
   border-width: 6px;
   border-top-color: #777777;
 }
-#cssmenu ul ul > li:hover::after,
-#cssmenu ul ul > li.active::after,
-#cssmenu ul ul > li.open::after {
+#menu_left_user #cssmenu ul ul > li:hover::after,
+#menu_left_user #cssmenu ul ul > li.active::after,
+#menu_left_user #cssmenu ul ul > li.open::after {
   border-top-color: #666666;
 }
 </style>
+<script type='text/javascript'>
+$( document ).ready(function() {
+   $('#menu_left_user #cssmenu li.has-sub>a').on('click', function(){
+         $(this).removeAttr('href');
+         var element = $(this).parent('li');
+         if (element.hasClass('open')) {
+            element.removeClass('open');
+            element.find('li').removeClass('open');
+            element.find('ul').slideUp();
+         }
+         else {
+            element.addClass('open');
+            element.children('ul').slideDown();
+            element.siblings('li').children('ul').slideUp();
+            element.siblings('li').removeClass('open');
+            element.siblings('li').find('li').removeClass('open');
+            element.sibl5ngs('li').find('ul').slideUp();
+         }
+   });
+});
+
+function loadMenuInfo(url, element,menuField)
+{
+  var infoAuth = btoa(username + ":" + password);
+  var id = "";
+  if ($("#menu-select").val() == "user")
+    id = "/users/" + username;
+  else
+    id = $("#menu-select").val();
+  jQuery.ajax({
+    type: 'GET', // Le type de ma requete
+    url: rootURL + id + url, 
+    dataType: 'json',
+    beforeSend: function (request)
+      {
+        request.setRequestHeader("Authorization", "Basic  "+ infoAuth +"==");
+      },
+    success: function(data, textStatus, jqXHR) 
+      {
+        $(element).parent().children("ul").html("");
+        for(var i=0 ; i< data.resource_list.length ; i++) {
+          $(element).parent().children("ul").append("<li><a onclick=\"javascript:loadInfoPage('" + menuField + "','" + data.resource_list[i].href + "');\" href='#' "+ ((i == data.resource_list.length -1) ? "class='last' " :"") +"><span>" + data.resource_list[i].name + "</span></a></li>");
+        }
+      },
+    error: function(jqXHR, textStatus, errorThrown){
+      }
+  });  
+}
+
+function loadInfoPage(menuField, href)
+{
+  url = href;
+  if (menuField == "formalism")
+  {
+    
+  }
+  else if (menuField == "model")
+  {
+    chargerPage("model");
+  }
+  else if (menuField == "service")
+  {
+
+  }
+  else if (menuField == "execution")
+  {
+
+  }
+}
+
+function emptyMenu()
+{
+  $("#menu_left_user ul li ul").html("");
+}
+</script>
+<div id="menu_left_user">
 <div id='cssmenu'>
+<input type="search" id="search" results="5" placeholder="Search..." name="s" style="-webkit-appearance: textfield;-webkit-box-sizing: content-box; width:207px; height:25px;font-size:14px;">
 <ul>
-   <li class='active'><a href='javascript:return false;'><span>Myself resources</span></a></li>
-   <li class='has-sub'><a href='#'><span>User resources</span></a>
-      <ul>
-         <li class='has-sub'><a href='#'><span>Formalisms</span></a>
-            <ul>
-               <li><a href='#'><span>Sub Item</span></a></li>
-               <li class='last'><a href='#'><span>Sub Item</span></a></li>
-            </ul>
-         </li>
-         <li class='has-sub'><a href='#'><span>Models</span></a>
-            <ul>
-               <li><a href='#'><span>Sub Item</span></a></li>
-               <li class='last'><a href='#'><span>Sub Item</span></a></li>
-            </ul>
-         </li>
-         <li><a href='#'><span>Converters</span></a></li>
-         <li><a href='#'><span>Scenarios</span></a></li>
-         <li><a href='#'><span>Services</span></a></li>
-         <li class='last'><a href='#'><span>Executions</span></a></li>
-      </ul>
-   </li>
-   <li class='has-sub last'><a href='#'><span>Project resources</span></a>
-      <ul>
-         <li><a href='#'><span>Formalisms</span></a></li>
-         <li><a href='#'><span>Models</span></a></li>
-         <li><a href='#'><span>Converters</span></a></li>
-         <li><a href='#'><span>Scenarios</span></a></li>
-         <li><a href='#'><span>Services</span></a></li>
-         <li class='last'><a href='#'><span>Executions</span></a></li>
-      </ul>
-   </li>
-   <li class='active'><a href='javascript:return false;'><span>Other resources</span></a></li>
-   <li class='has-sub'><a href='#'><span>User resources</span></a>
-      <ul>
-         <li class='has-sub'><a href='#'><span>Formalisms</span></a>
-            <ul>
-               <li><a href='#'><span>Sub Item</span></a></li>
-               <li class='last'><a href='#'><span>Sub Item</span></a></li>
-            </ul>
-         </li>
-         <li class='has-sub'><a href='#'><span>Models</span></a>
-            <ul>
-               <li><a href='#'><span>Sub Item</span></a></li>
-               <li class='last'><a href='#'><span>Sub Item</span></a></li>
-            </ul>
-         </li>
-         <li><a href='#'><span>Converters</span></a></li>
-         <li><a href='#'><span>Scenarios</span></a></li>
-         <li><a href='#'><span>Services</span></a></li>
-         <li class='last'><a href='#'><span>Executions</span></a></li>
-      </ul>
-   </li>
-   <li class='has-sub last'><a href='#'><span>Project resources</span></a>
-      <ul>
-         <li><a href='#'><span>Formalisms</span></a></li>
-         <li><a href='#'><span>Models</span></a></li>
-         <li><a href='#'><span>Converters</span></a></li>
-         <li><a href='#'><span>Scenarios</span></a></li>
-         <li><a href='#'><span>Services</span></a></li>
-         <li class='last'><a href='#'><span>Executions</span></a></li>
-      </ul>
-   </li>
+<li class='has-sub'><a href='#' onclick="javascript:loadMenuInfo('/formalisms',this,'formalism');"><span>Formalisms</span></a>
+  <ul id="formalisms">
+  </ul>
+</li>
+<li class='has-sub'><a href='#' onclick="javascript:loadMenuInfo('/models',this,'model');"><span>Models</span></a>
+  <ul>
+    <li><a href='#'><span>Sub Item</span></a></li>
+    <li class='last'><a href='#'><span>Sub Item</span></a></li>
+  </ul>
+</li>
+<li class='has-sub'><a href='#' onclick="javascript:loadMenuInfo('/services',this,'service');"><span>Services</span></a>
+  <ul>
+  </ul>
+</li>
+<li class='has-sub'><a href='#' onclick="javascript:loadMenuInfo('/executions',this,'execution');"><span>Executions</span></a>
+  <ul>
+    <li><a href='#'><span>Sub Item</span></a></li>
+    <li class='last'><a href='#'><span>Sub Item</span></a></li>
+  </ul>
+</li>
 </ul>
+<select id="menu-select" name="nom" size="1" style="width:215px;height:25px;font-size:14px;" onchange="javascript:emptyMenu();">
+  <option value="user">User</option>
+</select>
 </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+  var infoAuth = btoa(username + ":" + password);
+  jQuery.ajax({
+    type: 'GET', // Le type de ma requete
+    url: rootURL + '/users/'+ username +'/projects', 
+    dataType: 'json',
+    beforeSend: function (request)
+      {
+        request.setRequestHeader("Authorization", "Basic  "+ infoAuth +"==");
+      },
+    success: function(data, textStatus, jqXHR) 
+      {
+        for(var i=0 ; i< data.resource_list.length ; i++) {
+          $("#menu-select").append("<option value='"+ data.resource_list[i].href +"'>" + data.resource_list[i].name + "</option>");
+        }
+      },
+    error: function(jqXHR, textStatus, errorThrown){
+        
+      }
+  });
+});
+</script>

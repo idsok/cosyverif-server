@@ -7,6 +7,7 @@
 		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 		<script type="text/javascript">
 			rootURL = "http://localhost:8080/server.php";
+			url = "";
 			username = "";
 			password = "";
 			function chargerPage(page)
@@ -15,38 +16,7 @@
 			}
 			function chargerMenu(page)
 			{
-				$('#menuGauche').load("website/html/" + page + ".html");
-			}
-			function connexion()
-			{
-				if ($("#connexion").text() == "Log in")
-				{
-					chargerPage("authenticate");
-				}
-				else
-				{
-					username = "";
-					password = "";
-					chargerMenu("menu_left_default");
-					chargerPage("home_default");
-					$("#connexion").text("Log in");
-					jQuery.ajax({
-	  				type: 'GET', // Le type de ma requete
-	  				url: rootURL + '/', 
-				  	dataType: 'text/html',
-					  success: function(data, textStatus, jqXHR) 
-						  {
-						    $(document).html(data);
-						  },
-					  error: function(jqXHR, textStatus, errorThrown) 
-						  {
-						    // Une erreur s'est produite lors de la requete
-						    $(document).html("erreur");
-						    
-						  }
-					});
-				  
-				}
+				$('#menuGauche #menu').load("website/html/" + page + ".html");
 			}
 		</script>
 		<title>Accueil</title>
@@ -66,7 +36,8 @@
 		<div id="corps">
 			<!-- menu gauche -->
 		 	<div id="menuGauche">
-
+		 		<div id="menu"></div>
+		 		<div id="menu-profile"></div>
 		 	</div>
 
 			<!-- contenu -->

@@ -4,28 +4,28 @@
 
 /* ---------- GENERAL ---------- */
 
-#body {
+#authenticate #body {
 	background: #f1f1f1;
 	color: #999;
 	font: 100%/1.5em sans-serif;
 	margin: 0;
 }
 
-h3 { margin: 0; }
+#authenticate h3 { margin: 0; }
 
-a {
+#authenticate a {
 	color: #999;
 	text-decoration: none;
 }
 
-a:hover { color: #1dabb8; }
+#authenticate a:hover { color: #1dabb8; }
 
-fieldset {
+#authenticate fieldset {
 	border: none;
 	margin: 0;
 }
 
-input {
+#authenticate input {
 	border: none;
 	font-family: inherit;
 	font-size: inherit;
@@ -33,27 +33,27 @@ input {
 	-webkit-appearance: none;
 }
 
-input:focus {
+#authenticate input:focus {
   outline: none;
 }
 
-input[type="submit"] { cursor: pointer; }
+#authenticate input[type="submit"] { cursor: pointer; }
 
-.clearfix { *zoom: 1; }
-.clearfix:before, .clearfix:after {
+#authenticate .clearfix { *zoom: 1; }
+#authenticate .clearfix:before, .clearfix:after {
 	content: "";
 	display: table;	
 }
-.clearfix:after { clear: both; }
+#authenticate .clearfix:after { clear: both; }
 
 /* ---------- LOGIN-FORM ---------- */
 
-#login-form {
+#authenticate #login-form {
 	margin: 50px auto;
 	width: 300px;
 }
 
-#login-form h3 {
+#authenticate #login-form h3 {
 	background-color: #222222;
 	border-radius: 5px 5px 0 0;
 	color: #fff;
@@ -63,14 +63,14 @@ input[type="submit"] { cursor: pointer; }
 	text-transform: uppercase;
 }
 
-#login-form fieldset {
+#authenticate #login-form fieldset {
 	background: #fff;
 	border-radius: 0 0 5px 5px;
 	padding: 20px;
 	position: relative;
 }
 
-#login-form fieldset:before {
+#authenticate #login-form fieldset:before {
 	background-color: #fff;
 	content: "";
 	height: 8px;
@@ -86,27 +86,27 @@ input[type="submit"] { cursor: pointer; }
 	width: 8px;
 }
 
-#login-form input {
+#authenticate #login-form input {
 	font-size: 14px;
 }
 
-#login-form input[type="text"],
-#login-form input[type="password"] {
+#authenticate #login-form input[type="text"],
+#authenticate #login-form input[type="password"] {
 	border: 1px solid #dcdcdc;
 	padding: 12px 10px;
 	width: 238px;
 }
 
-#login-form input[type="text"] {
+#authenticate #login-form input[type="text"] {
 	border-radius: 3px 3px 0 0;
 }
 
-#login-form input[type="password"] {
+#authenticate #login-form input[type="password"] {
 	border-top: none;
 	border-radius: 0px 0px 3px 3px;
 }
 
-#login-form input[type="submit"] {
+#authenticate #login-form input[type="submit"] {
 	background: #1dabb8;
 	border-radius: 3px;
 	color: #fff;
@@ -116,14 +116,14 @@ input[type="submit"] { cursor: pointer; }
 	padding: 12px 20px;
 }
 
-#login-form input[type="submit"]:hover { background: #198d98; }
+#authenticate #login-form input[type="submit"]:hover { background: #198d98; }
 
-#login-form footer {
+#authenticate #login-form footer {
 	font-size: 12px;
 	margin-top: 16px;
 }
 
-.info {
+#authenticate .info {
 	background: #e5e5e5;
 	border-radius: 50%;
 	display: inline-block;
@@ -155,8 +155,8 @@ input[type="submit"] { cursor: pointer; }
 			  {
 			  	$("#connexion").text("Log out");
 			    $('#contenu').load("website/html/home_user.html");
-			    $('#menuGauche').load("website/html/menu_left_user.html");
-
+			    $('#menuGauche #menu').load("website/html/menu_left_user.html");
+			    $('#menuGauche #menu-profile').load("website/html/profile.html");
 			  },
 		  error: function(jqXHR, textStatus, errorThrown) 
 			  {
@@ -170,6 +170,7 @@ input[type="submit"] { cursor: pointer; }
 		});
 	}
 </script>
+<div id="authenticate">
 <div id="body">
 	<div id="login-form">
     <h3>Login</h3>
@@ -184,4 +185,5 @@ input[type="submit"] { cursor: pointer; }
       </form>
 	  </fieldset>
 	</div> <!-- end login-form -->
+</div>
 </div>
