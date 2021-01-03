@@ -1,0 +1,16 @@
+<<<<<<< HEAD
+#! /bin/bash
+
+./bin/install-tools
+./bin/make-phar
+./bin/make-doc
+./bin/make-test
+=======
+#! /bin/sh
+
+set -e
+
+./bin/make-test
+./bin/make-check
+./bin/make-doc > /dev/null
+>>>>>>> d9685a5cdcf514ea3c8233b97f47ef44bb2fe3b2

@@ -1,0 +1,28 @@
+#! /bin/bash
+
+set -e
+
+<<<<<<< HEAD
+rm -rf coverage
+
+./bin/composer.phar update  --dev
+php -S localhost:8080 -t . server.php &
+pid=$!
+
+./vendor/bin/phpunit \
+  --strict \
+  --colors \
+  --bootstrap=vendor/autoload.php \
+  scenarios/
+
+./bin/merge
+
+kill -9 ${pid}
+=======
+cd src
+
+  ../bin/testing $(find . -name "*.test.lua" | sort)
+  echo
+
+cd ..
+>>>>>>> d9685a5cdcf514ea3c8233b97f47ef44bb2fe3b2

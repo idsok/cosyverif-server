@@ -1,0 +1,98 @@
+\select@language {french}
+\contentsline {chapter}{Remerciements}{2}{chapter*.2}
+\contentsline {paragraph}{}{2}{section*.3}
+\contentsline {paragraph}{}{2}{section*.4}
+\contentsline {paragraph}{}{2}{section*.5}
+\contentsline {chapter}{Introduction}{3}{chapter*.6}
+\contentsline {chapter}{\numberline {1}Contexte et Probl\IeC {\'e}matique}{4}{chapter.1}
+\contentsline {section}{\numberline {1.1}MeFoSyloMa}{4}{section.1.1}
+\contentsline {section}{\numberline {1.2}Organisation de CosyVerif}{4}{section.1.2}
+\contentsline {section}{\numberline {1.3}Pr\IeC {\'e}sentation des organismes d'accueil}{4}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}LIPN}{5}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}LSV}{5}{subsection.1.3.2}
+\contentsline {section}{\numberline {1.4}\IeC {\'E}tat actuel du projet}{5}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Probl\IeC {\`e}mes identifi\IeC {\'e}s}{6}{subsection.1.4.1}
+\contentsline {section}{\numberline {1.5}Sujet du stage}{7}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Que doit offrir la future plate-forme ?}{7}{subsection.1.5.1}
+\contentsline {subsection}{\numberline {1.5.2}Exigences de l'encadrement}{7}{subsection.1.5.2}
+\contentsline {subsection}{\numberline {1.5.3}Axes de ma contribution sur la future plate-forme}{7}{subsection.1.5.3}
+\contentsline {paragraph}{}{7}{section*.7}
+\contentsline {subsubsection}{C\IeC {\^o}t\IeC {\'e} serveur}{8}{section*.8}
+\contentsline {subsubsection}{C\IeC {\^o}t\IeC {\'e} client}{8}{section*.9}
+\contentsline {chapter}{\numberline {2}Conception et r\IeC {\'e}alisation du serveur}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}Ressources}{9}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Organisation de ressources}{9}{subsection.2.1.1}
+\contentsline {subsubsection}{Ressources propres}{10}{section*.10}
+\contentsline {subsubsection}{Ressources partag\IeC {\'e}es}{10}{section*.11}
+\contentsline {subsection}{\numberline {2.1.2}Protection des ressources}{10}{subsection.2.1.2}
+\contentsline {subsubsection}{Syst\IeC {\`e}me d'authentification}{10}{section*.12}
+\contentsline {subsubsection}{Syst\IeC {\`e}me d'autorisation}{12}{section*.13}
+\contentsline {section}{\numberline {2.2}D\IeC {\'e}finition de l'architecture et du protocole}{13}{section.2.2}
+\contentsline {paragraph}{}{13}{section*.14}
+\contentsline {paragraph}{}{13}{section*.15}
+\contentsline {paragraph}{}{14}{section*.16}
+\contentsline {subsection}{\numberline {2.2.1}URIs}{14}{subsection.2.2.1}
+\contentsline {paragraph}{}{14}{section*.17}
+\contentsline {subsection}{\numberline {2.2.2}Repr\IeC {\'e}sentation de ressources}{15}{subsection.2.2.2}
+\contentsline {paragraph}{}{15}{section*.18}
+\contentsline {subsection}{\numberline {2.2.3}M\IeC {\'e}thodes et codes de statut}{15}{subsection.2.2.3}
+\contentsline {paragraph}{}{15}{section*.19}
+\contentsline {paragraph}{}{15}{section*.20}
+\contentsline {paragraph}{}{15}{section*.21}
+\contentsline {paragraph}{}{15}{section*.22}
+\contentsline {section}{\numberline {2.3}Etude technique}{18}{section.2.3}
+\contentsline {paragraph}{}{18}{section*.23}
+\contentsline {paragraph}{}{18}{section*.26}
+\contentsline {paragraph}{Symphony / Silex}{18}{section*.27}
+\contentsline {paragraph}{Slim}{19}{section*.28}
+\contentsline {section}{\numberline {2.4}Mise en oeuvre}{20}{section.2.4}
+\contentsline {paragraph}{Simple}{20}{section*.36}
+\contentsline {paragraph}{G\IeC {\'e}n\IeC {\'e}rique}{20}{section*.37}
+\contentsline {paragraph}{Modulaire}{20}{section*.38}
+\contentsline {paragraph}{Portable}{20}{section*.39}
+\contentsline {paragraph}{Maintenable}{20}{section*.40}
+\contentsline {subsection}{\numberline {2.4.1}Description des diff\IeC {\'e}rents modules du d\IeC {\'e}p\IeC {\^o}t}{21}{subsection.2.4.1}
+\contentsline {subsubsection}{Module Exception}{21}{section*.41}
+\contentsline {subsubsection}{Module Authentication}{22}{section*.42}
+\contentsline {subsubsection}{Module Permission}{22}{section*.43}
+\contentsline {subsubsection}{Module Translation}{22}{section*.44}
+\contentsline {subsubsection}{Module Core}{22}{section*.45}
+\contentsline {paragraph}{}{22}{section*.46}
+\contentsline {subsection}{\numberline {2.4.2}Description de l'environnement de d\IeC {\'e}veloppement}{22}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Tests}{22}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}Bilan}{23}{subsection.2.4.4}
+\contentsline {subsection}{\numberline {2.4.5}Perspective}{23}{subsection.2.4.5}
+\contentsline {chapter}{\numberline {3}Conception et r\IeC {\'e}alisation de l'interface web}{24}{chapter.3}
+\contentsline {paragraph}{}{24}{section*.47}
+\contentsline {section}{\numberline {3.1}Pr\IeC {\'e}sentation}{24}{section.3.1}
+\contentsline {paragraph}{}{24}{section*.48}
+\contentsline {section}{\numberline {3.2}D\IeC {\'e}finition de l'architecture}{24}{section.3.2}
+\contentsline {paragraph}{}{24}{section*.49}
+\contentsline {section}{\numberline {3.3}Etude technique}{25}{section.3.3}
+\contentsline {paragraph}{}{25}{section*.50}
+\contentsline {paragraph}{}{25}{section*.52}
+\contentsline {paragraph}{}{25}{section*.54}
+\contentsline {paragraph}{}{25}{section*.56}
+\contentsline {paragraph}{}{25}{section*.58}
+\contentsline {paragraph}{}{25}{section*.60}
+\contentsline {paragraph}{}{26}{section*.62}
+\contentsline {section}{\numberline {3.4}Mise en oeuvre}{26}{section.3.4}
+\contentsline {paragraph}{}{26}{section*.63}
+\contentsline {paragraph}{Code r\IeC {\'e}utilisable :}{26}{section*.64}
+\contentsline {paragraph}{Composants standards :}{26}{section*.65}
+\contentsline {subsection}{\numberline {3.4.1}Exemples d'\IeC {\'e}cran de sortie}{26}{subsection.3.4.1}
+\contentsline {subsubsection}{Interface d'accueil du client web}{26}{section*.66}
+\contentsline {paragraph}{}{26}{section*.67}
+\contentsline {subsubsection}{Interface de recherche}{27}{section*.68}
+\contentsline {paragraph}{}{27}{section*.69}
+\contentsline {subsubsection}{Interface d'un compte utilisateur}{28}{section*.70}
+\contentsline {paragraph}{}{28}{section*.71}
+\contentsline {subsubsection}{Interface d'une ressource}{29}{section*.72}
+\contentsline {paragraph}{}{29}{section*.73}
+\contentsline {subsubsection}{Interface d'un projet}{30}{section*.74}
+\contentsline {paragraph}{}{30}{section*.75}
+\contentsline {subsection}{\numberline {3.4.2}Bilan}{31}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Perspective}{31}{subsection.3.4.3}
+\contentsline {chapter}{Conclusion}{32}{chapter*.76}
+\contentsline {chapter}{Annexes}{33}{chapter*.77}
+\contentsline {section}{\numberline {3.5}Webographie}{35}{section.3.5}

@@ -1,0 +1,14 @@
+{
+  "require": {
+    "slim/slim": "*",
+    "ircmaxell/password-compat": "*"
+   },
+  "require-dev": {
+    "guzzlehttp/guzzle": "*",
+    "phpunit/phpunit": "*",
+    "phpunit/php-code-coverage": "*"
+  },
+  "autoload": {
+    "psr-0": {"": "src/"}
+  }
+}

@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+// http://stackoverflow.com/questions/10167775/aggregating-code-coverage-from-several-executions-of-phpunit
+
+require 'vendor/autoload.php';
+
+$coverage = new PHP_CodeCoverage;
+$blacklist = array();
+exec("find vendor -name '*'", $blacklist);
+$coverage->filter()->addFilesToBlacklist($blacklist);
+
+foreach(glob('coverage/*.cov') as $filename) {
+  $cov = unserialize(file_get_contents($filename));
+  $coverage->merge($cov);
+}
+
+print "\nGenerating code coverage report in HTML format ...";
+
+$writer = new PHP_CodeCoverage_Report_HTML(35, 70);
+$writer->process($coverage, 'coverage');
+
+print " done\n";
+print "See coverage/index.html\n";

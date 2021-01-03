@@ -1,0 +1,683 @@
+\only<1>{
+  \frametitle{Réalisation}
+}\only<2-4>{
+  \frametitle{Création d'un utilisateur}
+}\only<5-6>{
+  \frametitle{Ajout de modèle}
+}\only<7>{
+  \frametitle{Lecture de modèle}
+}\only<8>{
+  \frametitle{Modification de modèle}
+}\only<9-11>{
+  \frametitle{Suppression de modèle}
+}\only<12>{
+  \frametitle{Lecture du collection de modèles}
+}\only<13-15>{
+  \frametitle{Création d'un autre utilisateur}
+}\only<16-22>{
+  \frametitle{Passage à un compte privé}
+}\only<23-24>{
+  \frametitle{Création de projet}
+}\only<25-26>{
+  \frametitle{Déplacement de modèle}
+}\only<27-29>{
+  \frametitle{Invitation d'utilisateur}
+}\only<30->{
+  \frametitle{Autres fonctionnalités implémentées}
+}
+
+
+\begin{columns}[T] % align columns
+\begin{column}{.65\textwidth}
+  \lstset{
+    breaklines=true,
+    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}}
+  }
+\begin{semiverbatim}
+\scriptsize
+\only<1>{
+  Requêtes/Réponses
+}\only<3>{
+  POST http://rest.cosyverif.org/users/isokhona
+            (request_type=create)
+  201 CREATED
+}\only<4>{
+  POST http://rest.cosyverif.org/users/isokhona
+  (request_type=activate
+   key=eda7e889177963b0d)
+  200 OK
+}\only<6>{
+  POST .../users/isokhona/models/philosophers
+              (request_type=create)
+  201 CREATED
+}\only<7>{
+  GET .../users/isokhona/models/philosophers
+  200 OK & data
+}\only<8>{
+  PUT .../users/isokhona/models/philosophers
+  200 OK
+}\only<10>{
+  POST .../users/isokhona/models/deletetest
+            (request_type=create)
+  201 CREATED
+}\only<11>{
+  DELETE .../users/isokhona/models/deletetest
+  204 NO CONTENT
+}\only<12>{
+  GET .../users/isokhona/models
+  200 OK & data
+}\only<14>{
+  POST http://rest.cosyverif.org/users/alban
+            (request_type=create)
+  201 CREATED
+}\only<15>{
+  POST http://rest.cosyverif.org/users/alban
+  (request_type=activate
+   key=tztz74ddiii45)
+  200 OK
+}
+\only<16>{
+ isokhona est publique
+}\only<17>{
+  isokhona
+
+  GET .../users/isokhona/models/philosophers
+  200 OK & data
+}\only<18>{
+  alban
+
+  GET .../users/isokhona/models/philosophers
+  200 OK & data
+}\only<19>{
+  PUT http://rest.cosyverif.org/users/isokhona
+  (is_public=false)
+  200 OK
+}\only<20>{
+ isokhona est privé
+}\only<21>{
+  isokhona
+
+  GET .../users/isokhona/models/philosophers
+  200 OK & data
+}\only<22>{
+  alban
+
+  GET .../users/isokhona/models/philosophers
+  403 FORBIDDEN
+}\only<24>{
+  POST .../users/isokhona/projects/vfsr_groupe1
+       (request_type = create)
+  201 CREATED
+}\only<26>{
+  POST .../projects/vfsr_groupe1/models/philosophers
+    (request_type = move,
+     source = /users/isokhona/models/philosophers)
+  201 CREATED
+}\only<28>{
+  isokhona
+
+  POST .../projects/vfsr_groupe1/invitations/alban
+  201 CREATED
+}\only<29>{
+  alban
+
+  PUT .../users/alban/invitations/vfsr_groupe1
+   (status = ACK)
+  200 OK
+}\only<30->{
+  - Changement de permissions
+}
+\only<31->{
+  - Recherche de ressources
+}
+
+\end{semiverbatim}
+
+
+\end{column}%
+\hfill%
+\begin{column}{.34\textwidth}
+% http://www.texample.net/tikz/examples/filesystem-tree/
+
+\tikzstyle{every node}=[draw=black,thick,anchor=west,minimum width=2cm,minimum height=2em]
+\tikzstyle{selected}=[draw=red,fill=red!30]
+\tikzstyle{optional}=[dashed,fill=gray!50]
+\scriptsize
+\begin{tikzpicture}[
+every node={draw=black,thick,anchor=west},
+selected={draw=red,fill=red!30},
+grow via three points={one child at (-.5,-0.7) and
+two children at (-.5,-0.7) and (-.5,-1.4)},
+edge from parent path={(\tikzparentnode.south west) |- (\tikzchildnode.west)}]
+\only<1-2>{%
+\node {/}
+child { node {users}}
+child { node {projects}};
+}%
+
+\only<3-4>{%
+\node {/}
+child { node {users}
+child { node [selected] {isokhona}
+child { node {formalisms}}
+child { node {models}}
+child { node {services}}
+child { node {executions}}
+}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {projects}};
+}%
+
+\only<5>{%
+\node {/}
+child { node {users}
+child { node [selected] {isokhona}
+child { node {formalisms}}
+child { node [selected] {models}}
+child { node {services}}
+child { node {executions}}
+}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {projects}};
+}%
+
+\only<6-8>{%
+\node {/}
+child { node {users}
+child { node {isokhona}
+child { node {formalisms}}
+child { node {models}
+   child { node [selected] {philosophers}}
+}
+child [missing] {}
+child { node {services}}
+child { node {executions}}
+}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {projects}};
+}%
+
+\only<9>{%
+\node {/}
+child { node {users}
+child { node {isokhona}
+child { node {formalisms}}
+child { node {models}
+   child { node {philosophers}}
+}
+child [missing] {}
+child { node {services}}
+child { node {executions}}
+}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {projects}};
+}%
+
+\only<10>{%
+\node {/}
+child { node {users}
+child { node {isokhona}
+child { node {formalisms}}
+child { node {models}
+   child { node {philosophers}}
+   child { node [selected] {deletetest}}
+}
+child [missing] {}
+child [missing] {}
+child { node {services}}
+child { node {executions}}
+}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {projects}};
+}%
+
+\only<11>{%
+\node {/}
+child { node {users}
+child { node {isokhona}
+child { node {formalisms}}
+child { node {models}
+   child { node {philosophers}}
+}
+child [missing] {}
+child { node {services}}
+child { node {executions}}
+}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {projects}};
+}%
+
+\only<12>{%
+\node {/}
+child { node {users}
+child { node {isokhona}
+child { node {formalisms}}
+child { node [selected]{models}
+   child { node {philosophers}}
+}
+child [missing] {}
+child { node {services}}
+child { node {executions}}
+}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {projects}};
+}%
+
+\only<13>{%
+\node {/}
+child { node {users}
+child { node {isokhona}
+child { node {formalisms}}
+child { node {models}
+   child { node {philosophers}}
+}
+child [missing] {}
+child { node {services}}
+child { node {executions}}
+}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {projects}};
+}%
+
+\only<14-15>{%
+\node {/}
+child { node {users}
+child { node {isokhona}}
+child { node [selected] {alban}
+child { node {formalisms}}
+child { node {models}}
+child { node {services}}
+child { node {executions}}
+}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {projects}};
+}%
+
+\only<16>{%
+\node {/}
+child { node {users}
+child { node [selected]{isokhona}
+child { node {formalisms}}
+child { node  {models}
+   child { node {philosophers}}
+}
+child [missing] {}
+child { node {services}}
+child { node {executions}}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {alban}}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {projects}};
+}%
+
+\only<17-18>{%
+\node {/}
+child { node {users}
+child { node {isokhona}
+child { node {formalisms}}
+child { node  {models}
+   child { node [selected]{philosophers}}
+}
+child [missing] {}
+child { node {services}}
+child { node {executions}}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {alban}}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {projects}};
+}%
+
+\only<19-20>{%
+\node {/}
+child { node {users}
+child { node [selected]{isokhona}
+child { node {formalisms}}
+child { node  {models}
+   child { node {philosophers}}
+}
+child [missing] {}
+child { node {services}}
+child { node {executions}}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {alban}}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {projects}};
+}%
+
+\only<21-22>{%
+\node {/}
+child { node {users}
+child { node {isokhona}
+child { node {formalisms}}
+child { node  {models}
+   child { node [selected]{philosophers}}
+}
+child [missing] {}
+child { node {services}}
+child { node {executions}}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {alban}}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {projects}};
+}%
+
+\only<23>{%
+\node {/}
+child { node {users}
+child { node {isokhona}
+child { node {formalisms}}
+child { node  {models}}
+child { node {services}}
+child { node {executions}}
+child { node [selected]{projects}}
+child { node [selected]{invitations}}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {alban}}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {projects}};
+}%
+
+\only<24>{%
+\node {/}
+child { node {users}
+child { node {isokhona}
+child { node {projects}
+child { node [selected]{vfsr\_groupe1}}
+}
+}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {projects}
+child { node [selected]{vfsr\_groupe1}
+child { node {formalisms}}
+child { node  {models}}
+child { node {users}
+child { node [selected]{isokhona}}
+}
+}
+};
+}%
+
+\only<25>{%
+\node {/}
+child { node {users}
+child { node {isokhona}
+child { node {models}
+    child { node [selected]{philosophers}}
+}
+}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {projects}
+child { node [selected]{vfsr\_groupe1}
+child { node {formalisms}}
+child { node  {models}}
+}
+};
+}%
+
+\only<26>{%
+\node {/}
+child { node {users}
+child { node {isokhona}
+child { node {models}}
+}
+child [missing] {}
+child { node {alban}}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {projects}
+child { node {vfsr\_groupe1}
+child { node {formalisms}}
+child { node  {models}
+      child { node [selected]{philosophers}}
+}
+}
+};
+}%
+
+\only<27>{%
+\node {/}
+child { node {users}
+          child { node {isokhona}}
+child { node [selected]{alban}
+child { node {projects}}
+child { node {invitations}}
+}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {projects}
+child { node [selected] {vfsr\_groupe1}
+          child { node  {users}
+      child { node {isokhona}}
+}
+          child [missing] {}
+          child { node {invitations}}
+}
+};
+}%
+
+\only<28>{%
+\node {/}
+child { node {users}
+          child { node {isokhona}}
+child { node {alban}
+child { node {invitations}
+child { node [selected]{vfsr\_groupe1}}
+}
+}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {projects}
+child { node {vfsr\_groupe1}
+          child { node {invitations}
+           child { node [selected]{alban}}
+          }
+}
+};
+}%
+
+\only<29>{%
+\node {/}
+child { node {users}
+          child { node {isokhona}}
+child { node {alban}
+child { node {projects}
+child { node [selected]{vfsr\_groupe1}}
+}
+}
+}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node {projects}
+child { node [selected] {vfsr\_groupe1}
+          child { node  {users}
+      child { node {isokhona}}
+      child { node [selected]{alban}}
+}
+}
+};
+}%
+
+
+\end{tikzpicture}
+
+
+\end{column}%
+\end{columns}
+%\end{minipage}
+\note{
+  \begin{itemize}
+    \item Je vous présente ici au moyen d'exemples les fonctionnalités que
+      j'ai implémenté dans le serveur
+    \item Explication: à droite l'arborescence des ressources disponibles
+      sur le server, à gauche les requêtes et réponses
+    \item Ces requêtes sont des requêtes HTTP, elles peuvent donc être
+      réalisées depuis n'importe quelle application disposant d'une
+      bibliothèque HTTP
+    \item Cas 1: création d'un utilisateur
+      \begin{itemize}
+        \item Sans les droits
+        \item Avec les droits
+        \item Un utilisateur particulier: l'administrateur
+      \end{itemize}
+    \item Cas 2: liste des utilisateurs
+      \begin{itemize}
+        \item Deux types de ressources: les listes et les ressources simples
+        \item Distinguées facilement
+        \item Fonctionnement similaire pour lister n'importe quelle
+          collection de ressources
+      \end{itemize}
+    \item Cas 3: ajout d'un modèle
+      \begin{itemize}
+        \item Chaque utilisateur dispose de ressources: formalismes,
+          modèles, services et exécutions
+        \item Lui seul peut créer ou modifier une ressource
+      \end{itemize}
+    \item Cas 3-1: ajout d'un autre modèle, puis suppression
+    \item Cas 3-2: .... ?
+    \item Cas 4: ajout d'un autre utilisateur
+    \item Cas 4-1:
+      \begin{itemize}
+        \item Passage en compte privé d'un utilisateur
+        \item Tentative d'accéder à un modèle par cet utilisateur,
+          par l'autre utilisateur (échec)
+      \end{itemize}
+    \item Cas 5: les deux utilisateurs veulent travailler ensemble sur un
+      projet industriel
+      \begin{itemize}
+        \item Impossible car les modèles doivent être privés mais partagés
+          entre les deux utilisateurs
+        \item Notion de projet (voir slide suivant)
+      \end{itemize}
+  \end{itemize}
+}
